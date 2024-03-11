@@ -25,8 +25,8 @@ public class Ordine {
     @JoinTable
             (
                     name = "ordine_piatto",
-                    joinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id"),
-                    inverseJoinColumns = @JoinColumn(name = "id_piatto", referencedColumnName = "id")
+                    joinColumns = @JoinColumn(name = "id_piatto", referencedColumnName = "id"),
+                    inverseJoinColumns = @JoinColumn(name = "id_ordine", referencedColumnName = "id")
             )
     private List<Piatto> piatti = new ArrayList<>();
 
