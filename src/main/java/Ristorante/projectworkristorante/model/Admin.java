@@ -5,7 +5,7 @@ import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table
-public class Amministratore {
+public class Admin {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
