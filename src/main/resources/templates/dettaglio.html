@@ -9,11 +9,15 @@
 
     <img th:text="${piatto.copertina}">
     <h2 th:text="${piatto.nome}"></h2>
-    <h3 th:text="${#numbers.formatDecimal(piatto.prezzo, 0, 'POINT', 2, 'COMMA')}"></h3>
+    <h3 th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></h3>
     <ul>
         <li th:text="${piatto.descrizione}"></li>
         <li th:text="${piatto.categoria}"></li>
     </ul>
+    <a th:href="@{/dettaglio/aggiungi(id=${piatto.id})}">Aggiungi al carrello</a>
+    <p th:if="${result != null}"
+       th:text="${result.equals('y') ? 'Piatto Aggiunto' : 'Piatto già presente'}"
+       th:style="${result.equals('y') ? 'color:green' : 'color:red'}"></p>
 
 </body>
 </html>

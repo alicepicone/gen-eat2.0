@@ -7,5 +7,22 @@
 <body>
     <a th:href="@{/}">Torna in Home Page</a>
     <a th:href="@{/riservatautente/logout}">Logout</a>
+    <h1 th:text="${utente.nome} + ' Questa è la tua area riservata '"></h1>
+
+    <h4 th:if="${carrello == null}">Non hai alcun prodotto nel carrello</h4>
+    <table th:if="${carrello != null}">
+        <tr th:each="piatto : ${carrello}">
+            <td th:text="${piatto.nome}"></td>
+            <td th:text="${piatto.prezzo}"></td>
+            <td>
+                <a th:href="@{/riservatautente/rimuovi(id=${piatto.id})}">Rimuovi piatto</a>
+            </td>
+        </tr>
+    </table>
+    <h5 th:if="${carrello != null}"
+        th:text="'Totale carrello ' + ${#numbers.formatDecimal(totale, 1, 'POINT', 2, 'COMMA')}"></h5>
+    <a th:if="${carrello != null}" th:href="@{/riservatautente/invia}">Invia Ordine</a> <!-- Implementare con data ora ritiro ordine che non può essere null -->
+    <p th:if="${send}">Ordine Inviato</p>
+
 </body>
 </html>

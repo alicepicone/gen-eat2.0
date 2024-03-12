@@ -1,6 +1,8 @@
 package Ristorante.projectworkristorante.service;
 
 import Ristorante.projectworkristorante.model.Piatto;
+import jakarta.servlet.http.HttpSession;
+
 import java.util.List;
 
 public interface PiattoService {
@@ -10,4 +12,12 @@ public interface PiattoService {
     Piatto getPiattoById(int id);
 
     List<Piatto> getPiattoByCategoria(String categoria);
+
+    boolean aggiungiAlCarrello(int id, HttpSession session);
+
+    List<Piatto> getCarrello(HttpSession session);
+
+    void rimuoviDalCarrello(int id, HttpSession session);
+
+    double getTotaleCarrello(HttpSession session);
 }
