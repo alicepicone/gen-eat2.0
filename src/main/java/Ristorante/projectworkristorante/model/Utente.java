@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -31,6 +33,15 @@ public class Utente {
     private String numeroCarta;
     @Column (name = "data_di_nascita")
     private LocalDate dataDiNascita;
+
+    @OneToMany
+            (
+                    mappedBy = "utente",
+                    cascade = CascadeType.REMOVE,
+                    fetch = FetchType.EAGER,
+                    orphanRemoval = true
+            )
+    private List<Ordine> ordini = new ArrayList<>();
 
     public int getId() {
         return id;
@@ -94,5 +105,13 @@ public class Utente {
 
     public void setDataDiNascita(LocalDate dataDiNascita) {
         this.dataDiNascita = dataDiNascita;
+    }
+
+    public List<Ordine> getOrdini() {
+        return ordini;
+    }
+
+    public void setOrdini(List<Ordine> ordini) {
+        this.ordini = ordini;
     }
 }
