@@ -11,12 +11,21 @@
         <a th:href="@{/registrazioneutente}">Registrazione Utente</a>
     </div>
 
-    <a th:href="@{/categoria(categoria=${'primi'})}">Primi</a>
+    <h3>Filtri</h3>
+    <div>
+        <a th:href="@{/categoria(categoria=${'primi'})}">Primi</a>
+        <a th:href="@{/categoria(categoria=${'antipasti'})}">Antipasti</a>
+        <a th:href="@{/categoria(categoria=${'secondi'})}">Secondi</a>
+        <a th:href="@{/categoria(categoria=${'contorni'})}">Contorni</a>
+        <a th:href="@{/categoria(categoria=${'dolci'})}">Dolci</a>
+        <a th:href="@{/categoria(categoria=${'bevande'})}">Bevende</a>
+    </div>
+
     <table>
         <tr th:each="piatto : ${piattiPerCategoria}">
             <img th:text="${piatto.copertina}"> <!-- Da modificare con immagine -->
             <td th:text="${piatto.nome}"></td>
-            <td th:text="${#numbers.formatDecimal(piatto.prezzo, 0, 'POINT', 2, 'COMMA')}"></td>
+            <td th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></td>
             <td>
                 <a th:href="@{/dettaglio(id=${piatto.id})}">Dettaglio</a>
             </td>
@@ -29,7 +38,7 @@
             <tr th:each="piatto : ${piatti}">
                 <img th:text="${piatto.copertina}"> <!-- Da modificare con immagine -->
                 <td th:text="${piatto.nome}"></td>
-                <td th:text="${#numbers.formatDecimal(piatto.prezzo, 0, 'POINT', 2, 'COMMA')}"></td>
+                <td th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></td>
                 <td>
                     <a th:href="@{/dettaglio(id=${piatto.id})}">Dettaglio</a>
                 </td>
