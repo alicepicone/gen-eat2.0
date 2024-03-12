@@ -26,11 +26,15 @@ public class UtenteServiceImpl implements UtenteService{
 
     @Override
     public void registraUtente(Utente utente) {
-
+        utenteDao.save(utente);
     }
 
     @Override
     public boolean controlloUsername(String username) {
+
+        if(utenteDao.findByUsername(username) == null) {
+            return true;
+        }
         return false;
     }
 }

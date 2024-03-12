@@ -12,9 +12,9 @@ public class Ordine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column
+    @Column (name = "data_ora_ordine")
     private LocalDate dataOraOrdine;
-    @Column
+    @Column (name = "data_ora_ritiro")
     private LocalDate dataOraRitiro;
     @Column
     private double importo;

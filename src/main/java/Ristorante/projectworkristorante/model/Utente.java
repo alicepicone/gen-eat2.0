@@ -3,6 +3,8 @@ package Ristorante.projectworkristorante.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
 
+import java.time.LocalDate;
+
 @Entity
 @Table
 public class Utente {
@@ -23,6 +25,12 @@ public class Utente {
     //espressione regolare di pattern
     @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,50}", message = "Password troppo debole")
     private String password;
+    @Column
+    private String immagine;
+    @Column (name = "numero_carta")
+    private String numeroCarta;
+    @Column (name = "data_di_nascita")
+    private LocalDate dataDiNascita;
 
     public int getId() {
         return id;
@@ -62,5 +70,29 @@ public class Utente {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getImmagine() {
+        return immagine;
+    }
+
+    public void setImmagine(String immagine) {
+        this.immagine = immagine;
+    }
+
+    public String getNumeroCarta() {
+        return numeroCarta;
+    }
+
+    public void setNumeroCarta(String numeroCarta) {
+        this.numeroCarta = numeroCarta;
+    }
+
+    public LocalDate getDataDiNascita() {
+        return dataDiNascita;
+    }
+
+    public void setDataDiNascita(LocalDate dataDiNascita) {
+        this.dataDiNascita = dataDiNascita;
     }
 }
