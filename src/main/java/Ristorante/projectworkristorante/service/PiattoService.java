@@ -2,6 +2,7 @@ package Ristorante.projectworkristorante.service;
 
 import Ristorante.projectworkristorante.model.Piatto;
 import jakarta.servlet.http.HttpSession;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -20,4 +21,10 @@ public interface PiattoService {
     void rimuoviDalCarrello(int id, HttpSession session);
 
     double getTotaleCarrello(HttpSession session);
+
+    void registraPiatto(Piatto piatto, String nome, String prezzo, String descrizione, String categoria, MultipartFile copertina);
+
+    void cancellaPiatto(int id);
+
+    Object validaPiatto(Piatto piatto, String nome, String prezzo, String descrizione, String categoria);
 }

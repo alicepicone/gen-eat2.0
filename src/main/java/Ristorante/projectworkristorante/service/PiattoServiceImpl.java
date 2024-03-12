@@ -5,9 +5,10 @@ import Ristorante.projectworkristorante.model.Piatto;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.*;
+import java.util.regex.Pattern;
 
 @Service
 public class PiattoServiceImpl implements PiattoService {
@@ -96,4 +97,56 @@ public class PiattoServiceImpl implements PiattoService {
 
         return 0;
     }
+
+    @Override
+    public void registraPiatto(Piatto piatto, String nome, String prezzo, String descrizione, String categoria, MultipartFile copertina) {
+        piatto.setNome(nome);
+        piatto.setPrezzo(Double.parseDouble(prezzo));
+        piatto.setDescrizione(descrizione);
+        piatto.setCategoria(categoria);
+
+        if(copertina != null && !copertina.isEmpty()) {
+            try {
+                String formato = copertina.getContentType();
+                String copertinaCodificata = "data:" + formato + ";base64," +
+                        Base64.getEncoder().encodeToString(copertina.getBytes());
+                piatto.setCopertina(copertinaCodificata);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+
+        piattoDao.save(piatto);
+    }
+
+    @Override
+    public void cancellaPiatto(int id) {
+        piattoDao.deleteById(id);
+    }
+
+    @Override
+    public Object validaPiatto(Piatto piatto, String nome, String prezzo, String descrizione, String categoria) {
+
+        piatto.setNome(nome);
+        //dichiariamo una mappa di eventuali errori
+        Map<String, String> errori = new HashMap<>();
+        //inseriamo un errore nella mappa se il titolo non passa il controllo
+        if(!Pattern.matches("[a-zA-Z0-9\\sàèìòù,.-]{1,50}", nome)) {
+            errori.put("nome", "Caratteri non ammessi");
+        }
+        //proviamo a settare il prezzo o inseriamo un errore nella mappa
+        try {
+            piatto.setPrezzo(Double.parseDouble(prezzo));
+        } catch (Exception e) {
+            errori.put("prezzo", "Il prezzo indicato non è corretto");
+        }
+        //se abbiamo errori nella mappa ritorniamo l'oggetto libro e gli errori
+        if(errori.size() > 0)
+            return new Object[]{piatto, errori};
+        else //se non abbiamo errori
+            return null;
+
+    }
+
+
 }
