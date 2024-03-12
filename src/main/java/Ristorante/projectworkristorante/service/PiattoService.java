@@ -8,4 +8,6 @@ public interface PiattoService {
     List<Piatto> getPiatti();
 
     Piatto getPiattoById(int id);
+
+    List<Piatto> getPiattoByCategoria(String categoria);
 }

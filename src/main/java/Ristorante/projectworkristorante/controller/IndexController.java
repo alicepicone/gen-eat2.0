@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -25,5 +26,17 @@ public class IndexController {
 
         return "index";
     }
+
+    @GetMapping("/categoria")
+    public String filtroCategoria(@RequestParam(name = "categoria") String categoria, Model model) {
+
+        List<Piatto> piattiPerCategoria = piattoService.getPiattoByCategoria(categoria);
+        model.addAttribute("piattiPerCategoria", piattiPerCategoria);
+        model.addAttribute("categoria", categoria);
+
+        return "redirect:/categoria?categoria=" + categoria;
+    }
+
+
 
 }
