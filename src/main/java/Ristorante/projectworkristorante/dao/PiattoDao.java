@@ -1,10 +1,12 @@
 package Ristorante.projectworkristorante.dao;
 
 import Ristorante.projectworkristorante.model.Piatto;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
-public interface PiattoDao extends CrudRepository<Piatto, Integer> {
+import java.util.List;
 
-    Piatto findByCategoria(String categoria);
+public interface PiattoDao extends CrudRepository<Piatto, Integer> {
+    List<Piatto> findByCategoria(String categoria);
 
 }

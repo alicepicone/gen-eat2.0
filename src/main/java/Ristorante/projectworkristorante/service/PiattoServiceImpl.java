@@ -34,9 +34,6 @@ public class PiattoServiceImpl implements PiattoService {
 
     @Override
     public List<Piatto> getPiattoByCategoria(String categoria) {
-
-        List<Piatto> piatti = (List<Piatto>) piattoDao.findByCategoria(categoria);
-
-        return piatti;
+        return piattoDao.findByCategoria(categoria);
     }
 }
