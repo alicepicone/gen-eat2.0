@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -27,7 +28,7 @@ public class OrdineServiceImpl implements OrdineService{
 
         if(carrello != null && utente != null) {
             Ordine ordine = new Ordine();
-            ordine.setDataOraOrdine(LocalDate.now());
+            ordine.setDataOraOrdine(LocalDateTime.now());
             ordine.setUtente(utente);
             ordine.setPiatti(carrello);
             ordine.setImporto(piattoService.getTotaleCarrello(session));
