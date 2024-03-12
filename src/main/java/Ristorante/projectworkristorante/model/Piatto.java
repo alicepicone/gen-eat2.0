@@ -25,13 +25,6 @@ public class Piatto {
     @Column
     private String descrizione;
 
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "id_utente", referencedColumnName = "id")
-    private Utente utente;
-    @ManyToOne(cascade = CascadeType.REFRESH)
-    @JoinColumn(name = "id_piatto", referencedColumnName = "id")
-    private Piatto piatto;
-
     @ManyToMany(cascade = CascadeType.REFRESH, fetch = FetchType.EAGER)
     @JoinTable
             (
@@ -87,22 +80,6 @@ public class Piatto {
 
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
-    }
-
-    public Utente getUtente() {
-        return utente;
-    }
-
-    public void setUtente(Utente utente) {
-        this.utente = utente;
-    }
-
-    public Piatto getPiatto() {
-        return piatto;
-    }
-
-    public void setPiatto(Piatto piatto) {
-        this.piatto = piatto;
     }
 
     public List<Ordine> getOrdini() {

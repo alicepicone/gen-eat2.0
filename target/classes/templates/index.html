@@ -10,5 +10,16 @@
         <a th:href="@{/loginutente}">Login Utente</a>
         <a th:href="@{/registrazioneutente}">Registrazione Utente</a>
     </div>
+    <h2>Catalogo piatti</h2>
+    <table>
+        <tr th:each="piatto : ${piatti}">
+            <img th:text="${piatto.copertina}"> <!-- Da modificare con immagine -->
+            <td th:text="${piatto.nome}"></td>
+            <td th:text="${#numbers.formatDecimal(piatto.prezzo, 0, 'POINT', 2, 'COMMA')}"></td>
+            <td>
+                <a th:href="@{/dettaglio(id=${piatto.id})}">Dettaglio</a>
+            </td>
+        </tr>
+    </table>
 </body>
 </html>

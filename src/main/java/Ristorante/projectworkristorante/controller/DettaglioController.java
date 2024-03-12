@@ -7,23 +7,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-@RequestMapping("/")
-public class IndexController {
+@RequestMapping("/dettaglio")
+public class DettaglioController {
 
     @Autowired
     private PiattoService piattoService;
 
     @GetMapping
-    public String getPage(Model model) {
+    public String getPage(@RequestParam("id") int id,
+                          Model model) {
 
-        List<Piatto> piatti = piattoService.getPiatti();
-        model.addAttribute("piatti", piatti);
+        Piatto piatto = piattoService.getPiattoById(id);
+        model.addAttribute("piatto", piatto);
 
-        return "index";
+        return "dettaglio";
     }
 
 }

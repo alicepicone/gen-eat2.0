@@ -5,6 +5,15 @@
     <title>Dettagli</title>
 </head>
 <body>
+    <a th:href="@{/}">Torna in Home Page</a>
+
+    <img th:text="${piatto.copertina}">
+    <h2 th:text="${piatto.nome}"></h2>
+    <h3 th:text="${#numbers.formatDecimal(piatto.prezzo, 0, 'POINT', 2, 'COMMA')}"></h3>
+    <ul>
+        <li th:text="${piatto.descrizione}"></li>
+        <li th:text="${piatto.categoria}"></li>
+    </ul>
 
 </body>
 </html>
