@@ -72,3 +72,34 @@ border-style: none;
 border-radius: 25px;
 background-color:rgb(83, 96, 143);
 }
+.dettaglio-body{
+background-color: antiquewhite;
+}
+.dettaglio-header{
+background-color: darkgray;
+}
+.btnH{
+margin: 0 auto;
+margin-left: 1%;
+margin-top: 1%;
+border: 2px solid white;
+}
+h4{
+margin-left: 40%;
+margin-right: 40%;
+text-align: right;
+}
+h5{
+border-style: none; border-bottom: 1px solid black;
+}
+.row p{
+border-style: none;
+border-bottom: 1px solid black;
+}
+.btn-a{
+border: 2px solid black;
+background-color: greenyellow;
+align-items: center;
+margin-left: 25%;
+margin-right: 25%;
+}
