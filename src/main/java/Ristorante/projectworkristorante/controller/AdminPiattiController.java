@@ -2,6 +2,7 @@ package Ristorante.projectworkristorante.controller;
 
 import Ristorante.projectworkristorante.model.Piatto;
 import Ristorante.projectworkristorante.service.PiattoService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,14 +26,19 @@ public class AdminPiattiController {
     private Map<String, String> errori;
 
     @GetMapping
-    public String getPage(Model model,
+    public String getPage(HttpSession session,
+                          Model model,
                           @RequestParam(name = "id", required = false) Integer id) {
 
+        if(session.getAttribute("admin") == null)
+            return  "redirect:/loginadmin";
         List<Piatto> piatti = piattoService.getPiatti();
         if(errori == null)
             piatto = id == null ? new Piatto() : piattoService.getPiattoById(id);
 
         model.addAttribute("piatti", piatti);
+        model.addAttribute("piatto", piatto);
+        model.addAttribute("errori", errori);
 
         return "adminpiatti";
     }
