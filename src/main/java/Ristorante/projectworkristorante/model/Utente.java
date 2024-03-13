@@ -27,8 +27,6 @@ public class Utente {
     //espressione regolare di pattern
     @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,50}", message = "Password troppo debole")
     private String password;
-    @Column
-    private String immagine;
     @Column (name = "numero_carta")
     private String numeroCarta;
     @Column (name = "data_di_nascita")
@@ -81,14 +79,6 @@ public class Utente {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getImmagine() {
-        return immagine;
-    }
-
-    public void setImmagine(String immagine) {
-        this.immagine = immagine;
     }
 
     public String getNumeroCarta() {
