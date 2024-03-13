@@ -55,6 +55,7 @@
         </div>
     </nav>
 </header>
+<div class="container-dettaglio">
 <a class="col btn btnH" th:href="@{/}">Torna in Home Page</a>
 <h1 class="text-center" th:text="${piatto.nome}" ></h1>
 <div class="container row">
@@ -79,7 +80,7 @@
            th:style="${result.equals('y') ? 'color:green' : 'color:red'}">ye</p>
     </div>
 </div>
-
+</div>
 <footer>
     <div class="about">
         <h2>About</h2>
