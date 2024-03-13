@@ -57,3 +57,18 @@ align-items: center;
 align-items: flex-end;
 width: 33%;
 }
+.user-login{
+background-color: coral;
+}
+.header-login{
+background-color: darkgray;
+}
+.login-user-container{
+margin: 0 auto;
+margin-top: 20%;
+margin-bottom: 20%;
+border: 3px;
+border-style: none;
+border-radius: 25px;
+background-color:rgb(83, 96, 143);
+}
