@@ -1,3 +1,15 @@
+.card {
+display: flex;
+margin: 20px;
+width: 18rem;
+}
+main {
+padding: 40px;
+text-align: center;
+}
+h2 a {
+text-align: center;
+}
 .body-admin-login{
 background-color: coral;
 }
@@ -102,4 +114,36 @@ background-color: greenyellow;
 align-items: center;
 margin-left: 25%;
 margin-right: 25%;
+}
+.registrazione-utente{
+background-color: aqua;
+}
+.header-registrazione{
+background-color: darkgray;
+}
+.registrazione-utente-container{
+background-color: lightcoral;
+margin: 0 auto;
+margin-top: 5%;
+border: 3px;
+border-style: none;
+border-radius: 15px;
+margin-bottom: 15%
+}
+.card {
+display: flex;
+margin: 20px;
+width: 18rem;
+}
+
+main {
+padding: 40px;
+text-align: center;
+}
+
+h2, a {
+text-align: center;
+}
+.container-dettaglio{
+margin-bottom: 25%;
 }
