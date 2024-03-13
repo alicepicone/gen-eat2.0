@@ -60,14 +60,6 @@ public class RiservataUtenteController {
         return "redirect:/riservatautente";
     }
 
-    @GetMapping("/invia")
-    public String send(HttpSession session) {
-
-        ordineService.inviaOrdine(session);
-
-        return "redirect:/riservatautente?send";
-    }
-
     @PostMapping
     public String formManager(
             @Valid @ModelAttribute("user") Utente utente,
@@ -82,5 +74,15 @@ public class RiservataUtenteController {
 
         return "redirect:/riservatautente";
     }
+
+    @PostMapping("/invia")
+    public String inviaOrdine(
+            @RequestParam("slot") String slot,
+            HttpSession session) {
+        ordineService.inviaOrdine(session, slot);
+
+        return "redirect:/riservatautente?send";
+    }
+
 
 }

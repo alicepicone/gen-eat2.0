@@ -21,7 +21,19 @@
     </table>
     <h5 th:if="${carrello != null}"
         th:text="'Totale carrello ' + ${#numbers.formatDecimal(totale, 1, 'POINT', 2, 'COMMA')}"></h5>
-    <a th:if="${carrello != null}" th:href="@{/riservatautente/invia}">Invia Ordine</a> <!-- Implementare con data ora ritiro ordine che non può essere null -->
+    <form action="/riservatautente/invia" method="post" th:if="${carrello != null}">
+        <lable>Seleziona una data di ritiro</lable><br>
+        <select name="slot">
+            <option value="">Seleziona</option>
+            <option value="19:30">Ore 19:30</option>
+            <option value="20:00">Ore 20:00</option>
+            <option value="20:30">Ore 20:30</option>
+            <option value="21:00">Ore 21:00</option>
+            <option value="21:30">Ore 21:30</option>
+            <option value="22:00">Ore 22:00</option>
+        </select>
+        <input type="submit" value="Invia ordine">
+    </form>
     <p th:if="${send}">Ordine Inviato</p>
 
 </body>

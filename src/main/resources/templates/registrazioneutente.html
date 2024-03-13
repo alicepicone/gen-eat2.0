@@ -22,6 +22,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
+                </ul>
             </div>
         </div>
     </nav>
@@ -51,11 +52,6 @@
             </span>
         </div>
         <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-        <br>
-        <label class="form-label col-form-label">Inserire una foto (opzionale)</label>
-        <input type="file" th:field="*{immagine}" placeholder="foto">
-        <p th:if="${#fields.hasErrors('immagine')}" th:errors="*{immagine}"></p>
-        <br>
         <label class="form-label col-form-label">Inserire numero della carta (opzionale)</label>
         <input type="text"  th:field="*{numeroCarta}" placeholder="numero di carta">
         <p th:if="${#fields.hasErrors('numeroCarta')}" th:errors="*{numeroCarta}"></p>

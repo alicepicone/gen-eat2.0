@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 @Service
@@ -21,7 +22,7 @@ public class OrdineServiceImpl implements OrdineService{
     private PiattoService piattoService;
 
     @Override
-    public void inviaOrdine(HttpSession session) {
+    public void inviaOrdine(HttpSession session, String slot) {
 
         List<Piatto> carrello = (List<Piatto>) session.getAttribute("carrello");
         Utente utente = (Utente) session.getAttribute("utente");
@@ -32,6 +33,7 @@ public class OrdineServiceImpl implements OrdineService{
             ordine.setUtente(utente);
             ordine.setPiatti(carrello);
             ordine.setImporto(piattoService.getTotaleCarrello(session));
+            ordine.setDataOraRitiro(LocalTime.parse(slot));
             ordineDao.save(ordine);
             utente.getOrdini().add(ordine);
             session.setAttribute("utente", utente);

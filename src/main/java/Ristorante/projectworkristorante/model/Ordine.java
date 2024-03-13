@@ -1,8 +1,8 @@
 package Ristorante.projectworkristorante.model;
 
 import jakarta.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class Ordine {
     @Column (name = "data_ora_ordine")
     private LocalDateTime dataOraOrdine;
     @Column (name = "data_ora_ritiro")
-    private LocalDateTime dataOraRitiro;
+    private LocalTime dataOraRitiro;
     @Column
     private double importo;
     @ManyToOne(cascade = CascadeType.REFRESH)
@@ -47,11 +47,11 @@ public class Ordine {
         this.dataOraOrdine = dataOraOrdine;
     }
 
-    public LocalDateTime getDataOraRitiro() {
+    public LocalTime getDataOraRitiro() {
         return dataOraRitiro;
     }
 
-    public void setDataOraRitiro(LocalDateTime dataOraRitiro) {
+    public void setDataOraRitiro(LocalTime dataOraRitiro) {
         this.dataOraRitiro = dataOraRitiro;
     }
 
