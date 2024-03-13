@@ -23,5 +23,9 @@
 hs_err_pid*
 replay_pid*
 application.properties
+
+# ide stuffs
 .idea
-target
+
+# target dir
+target/
