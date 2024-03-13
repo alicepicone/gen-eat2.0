@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestione piatti</title>
+    <link href="css/style1.css" rel="stylesheet">
 </head>
 <body>
     <a th:href="@{/riservataadmin}">Torna nella tua area Riservata</a>
 
     <table>
         <tr th:each="piatto : ${piatti}">
-            <img th:text="${piatto.copertina}"> <!-- Da modificare con immagine -->
+            <td>
+                <img th:src="@{${piatto.copertina}}" class="copertina">
+            </td> <!-- Da modificare con immagine -->
             <td th:text="${piatto.nome}"></td>
             <td th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></td>
             <td th:text="${piatto.descrizione}"></td>
