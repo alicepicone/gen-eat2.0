@@ -21,7 +21,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -56,7 +56,6 @@
     </nav>
 </header>
 <div class="container-dettaglio">
-<a class="col btn btnH" th:href="@{/}">Torna in Home Page</a>
 <h1 class="text-center" th:text="${piatto.nome}" ></h1>
 <div class="container row">
     <img class="col-6" th:text="${piatto.copertina}" style="width: 50%; height:50%;">
@@ -68,7 +67,7 @@
         </div>
         <div class="w-100"></div>
         <h4 class="row"
-            th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}">
+            th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'">
         </h4>
 
         <a class="btn btn-a"
