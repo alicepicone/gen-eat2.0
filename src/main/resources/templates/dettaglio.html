@@ -58,7 +58,7 @@
 <div class="container-dettaglio">
 <h1 class="text-center" th:text="${piatto.nome}" ></h1>
 <div class="container row">
-    <img class="col-6" th:text="${piatto.copertina}" style="width: 50%; height:50%;">
+    <img class="col-6" th:src="@{${piatto.copertina}}" style="width: 50%; height:50%;">
     <div class="col-6 ">
         <div class="row" >
             <h5>Descrizione: </h5>
