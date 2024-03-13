@@ -1,0 +1,59 @@
+.body-admin-login{
+background-color: coral;
+}
+.header-admin-login{
+background-color: darkgray;
+}
+.login-admin-container{
+margin: 0 auto;
+margin-top: 20%;
+margin-bottom: 20%;
+border: 3px;
+border-style: none;
+border-radius: 25px;
+background-color:green;
+}
+.passw-btn{
+background-color:black;
+color: yellow;
+}
+footer{
+margin-top: 2%;
+background-color: black;
+color: aliceblue;
+display: flex;
+justify-content: space-evenly;
+position: relative;
+bottom: 0;
+left: 0;
+right: 0;
+}
+.submit-admin-btn{
+background-color:rgb(34, 0, 255);
+}
+.about{
+width: 33%;
+}
+footer h2{
+display: flex; justify-content: center;
+}
+footer p{
+display:flex;
+align-items: center;
+justify-content: center;
+margin: 0 auto;
+}
+footer img{
+width: 5%;
+margin-right: 1%;
+}
+.social{
+display: flex;
+flex-direction: column;
+width: 33%;
+align-items: center;
+}
+.powered-by{
+align-items: flex-end;
+width: 33%;
+}
