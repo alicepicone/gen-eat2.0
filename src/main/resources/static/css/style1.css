@@ -1,8 +1,7 @@
 .card {
 display: flex;
-margin: 20px;
-width: 18rem;
-height: 25rem;
+margin: 30px;
+height: 28rem;
 }
 
 main {
@@ -166,10 +165,6 @@ text-align: center;
 
 h2, a {
 text-align: center;
-}
-
-.container-dettaglio{
-margin-bottom: 25%;
 }
 
 .copertina{
