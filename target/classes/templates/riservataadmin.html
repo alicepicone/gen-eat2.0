@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Area Riservata Admin</title>
+</head>
+<body>
+    <h2>La tua area riservata</h2>
+    <div>
+        <a th:href="@{/}">Torna in Home Page</a>
+        <a th:href="@{/riservataadmin/logout}">Logout</a>
+    </div>
+    <a th:href="@{/adminpiatti}">Sezione Piatti</a>
+    <a th:href="@{/adminutenti}">Sezione Utenti/Ordini</a>
+</body>
+</html>
