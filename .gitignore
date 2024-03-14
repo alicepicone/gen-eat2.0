@@ -26,3 +26,5 @@ application.properties
 
 # ide stuffs
 .idea
+
+target/
