@@ -15,7 +15,7 @@
 *.war
 *.nar
 *.ear
-*.zip
+*.zipgit pu
 *.tar.gz
 *.rar
 
@@ -26,3 +26,5 @@ application.properties
 
 # ide stuffs
 .idea
+
+target/
