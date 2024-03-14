@@ -55,6 +55,7 @@
         </div>
     </nav>
 </header>
+<!--
 <div class="container-dettaglio">
 <h1 class="text-center" th:text="${piatto.nome}" ></h1>
 <div class="container row">
@@ -80,6 +81,32 @@
     </div>
 </div>
 </div>
+-->
+
+<div class="card mb-3" style="max-width: 540px;" >
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img th:src="@{${piatto.copertina}}" class="img-fluid rounded-start" style="width: 12rem; height: 8rem;">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body" style="margin: 10px;">
+                <h5 class="card-title" th:text="${piatto.nome}">Card title</h5>
+                <p th:text="${piatto.descrizione}"></p>
+                <p th:text="'Categoria: '+${piatto.categoria}">
+                    <small class="text-muted">Last updated 3 mins ago</small></p>
+                <h3 th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'"></h3>
+                <a class="btn btn-a"
+                   th:href="@{/dettaglio/aggiungi(id=${piatto.id})}">
+                    Aggiungi al carrello
+                </a>
+                <p th:if="${result != null}"
+                   th:text="${result.equals('y') ? 'Piatto Aggiunto' : 'Piatto già presente'}"
+                   th:style="${result.equals('y') ? 'color:green' : 'color:red'}">ye</p>
+            </div>
+        </div>
+    </div>
+</div>
+
 <footer>
     <div class="about">
         <h2>About</h2>
