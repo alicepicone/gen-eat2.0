@@ -29,12 +29,12 @@
                             Categorie
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Antipasti</a></li>
-                            <li><a class="dropdown-item" href="#">Primi</a></li>
-                            <li><a class="dropdown-item" href="#">Secondi</a></li>
-                            <li><a class="dropdown-item" href="#">Contorni</a></li>
-                            <li><a class="dropdown-item" href="#">Dolci</a></li>
-                            <li><a class="dropdown-item" href="#">Bevande</a></li>
+                            <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'antipasti'})}">Antipasti</a></li>
+                            <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'primi'})}">Primi</a></li>
+                            <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'secondi'})}">Secondi</a></li>
+                            <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'contorni'})}">Contorni</a></li>
+                            <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'dolci'})}">Dolci</a></li>
+                            <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'bevande'})}">Bevande</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -43,12 +43,12 @@
                             Login
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Utente</a></li>
-                            <li><a class="dropdown-item" href="#">Admin</a></li>
+                            <li><a class="dropdown-item" th:href="@{/loginutente}">Utente</a></li>
+                            <li><a class="dropdown-item" th:href="@{/loginadmin}">Admin</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Registrati</a>
+                        <a class="nav-link active" aria-current="page" th:href="@{/registrazioneutente}">Registrati</a>
                     </li>
                 </ul>
             </div>
