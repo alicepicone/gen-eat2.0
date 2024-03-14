@@ -40,4 +40,9 @@ public class OrdineServiceImpl implements OrdineService{
             session.removeAttribute("carrello");
         }
     }
+
+    @Override
+    public List<Ordine> getOrdini() {
+        return (List<Ordine>) ordineDao.findAll();
+    }
 }

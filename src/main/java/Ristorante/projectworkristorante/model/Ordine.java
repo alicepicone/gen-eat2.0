@@ -15,7 +15,7 @@ public class Ordine {
     private int id;
     @Column (name = "data_ora_ordine")
     private LocalDateTime dataOraOrdine;
-    @Column (name = "data_ora_ritiro")
+    @Column (name = "data_ora_ritiro") //TODO Rinominare in oraRitiro
     private LocalTime dataOraRitiro;
     @Column
     private double importo;

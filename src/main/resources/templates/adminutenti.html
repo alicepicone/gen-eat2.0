@@ -17,5 +17,14 @@
         </tr>
     </table>
 
+    <table>
+        <tr th:each="ordine : ${ordini}">
+            <td th:text="${ordine.dataOraOrdine}"></td>
+            <td th:text="${ordine.dataOraRitiro}"></td>
+            <td th:text="${#numbers.formatDecimal(ordine.importo, 1, 'POINT', 2, 'COMMA')} + '€'"></td>
+            <td th:text="${ordine.utente.nome} + ' ' + ${ordine.utente.cognome}"></td>
+        </tr>
+    </table>
+
 </body>
 </html>
