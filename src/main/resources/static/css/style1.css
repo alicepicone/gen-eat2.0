@@ -5,7 +5,7 @@ height: 28rem;
 }
 
 main {
-padding: 40px;
+background-color: lightcoral;
 text-align: center;
 }
 
@@ -37,7 +37,6 @@ color: yellow;
 }
 
 footer{
-margin-top: 2%;
 background-color: black;
 color: aliceblue;
 display: flex;
@@ -156,11 +155,6 @@ border: 3px;
 border-style: none;
 border-radius: 15px;
 margin-bottom: 15%
-}
-
-main {
-padding: 40px;
-text-align: center;
 }
 
 h2, a {

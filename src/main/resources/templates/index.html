@@ -60,7 +60,7 @@
             </div>
         </nav>
         <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true"
-             style="padding-bottom: 2%; width: 50%; height: 50%; margin: 0 auto; margin-bottom: 5%; margin-top: 2%;">
+             style="padding-bottom: 2%; width: 50%; height: 50%; margin: 0 auto; margin-top: 2%;">
             <div class="carousel-inner" style="border-radius: 10px;">
                 <div class="carousel-item active">
                     <img th:src="@{/images/Spaghetti-alla-carbonara.jpg}" class="d-block w-100"
@@ -94,7 +94,7 @@
     </header>
     <main>
         <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row">
-            <h2>Catalogo</h2>
+            <h2 style="margin-top: 2%;">Catalogo</h2>
              <div th:each="piatto : ${piatti}" class="col-md-3">
                  <a th:href="@{/dettaglio(id=${piatto.id})}">
                     <div class="card">
