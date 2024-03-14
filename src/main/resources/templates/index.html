@@ -96,19 +96,19 @@
         <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row">
             <h2>Catalogo</h2>
              <div th:each="piatto : ${piatti}" class="col-md-3">
-                <div class="card">
-                    <a th:href="@{/dettaglio(id=${piatto.id})}">
+                 <a th:href="@{/dettaglio(id=${piatto.id})}">
+                    <div class="card">
                         <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"
-                             th:alt="${piatto.nome}"
-                             style="border-radius: 50%; margin-left: 15%; width: 70%; margin-top: 2%;">
-                    </a>
-                    <div class="card-body" style="border-radius: 50%;">
-                        <h5 class="card-title" th:text="${piatto.nome}"></h5>
-                        <p class="card-text" th:text="${piatto.descrizione}"></p>
-                        <p style="background-color: rgb(27, 27, 214); border-radius: 5px; color: aliceblue; width: 15%; display: flex; align-items: center; justify-content: center;"
-                        th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></p>
+                                 th:alt="${piatto.nome}"
+                                 style="border-radius: 50%; margin-left: 15%; width: 70%; margin-top: 2%;">
+                        <div class="card-body" style="border-radius: 50%;">
+                            <h5 class="card-title" th:text="${piatto.nome}"></h5>
+                            <p class="card-text" th:text="${piatto.descrizione}"></p>
+                            <p style="background-color: rgb(27, 27, 214); border-radius: 5px; color: aliceblue; width: 15%; display: flex; align-items: center; justify-content: center;"
+                            th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></p>
+                        </div>
                     </div>
-                </div>
+                 </a>
              </div>
         </div>
 
