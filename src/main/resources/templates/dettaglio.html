@@ -55,38 +55,11 @@
         </div>
     </nav>
 </header>
-<!--
-<div class="container-dettaglio">
-<h1 class="text-center" th:text="${piatto.nome}" ></h1>
-<div class="container row">
-    <img class="col-6" th:src="@{${piatto.copertina}}" style="width: 50%; height:50%;">
-    <div class="col-6 ">
-        <div class="row" >
-            <h5>Descrizione: </h5>
-            <p th:text="${piatto.descrizione}"></p>
-            <p th:text="'Categoria: '+${piatto.categoria}"></p>
-        </div>
-        <div class="w-100"></div>
-        <h4 class="row"
-            th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'">
-        </h4>
 
-        <a class="btn btn-a"
-           th:href="@{/dettaglio/aggiungi(id=${piatto.id})}">
-            Aggiungi al carrello
-        </a>
-        <p th:if="${result != null}"
-           th:text="${result.equals('y') ? 'Piatto Aggiunto' : 'Piatto già presente'}"
-           th:style="${result.equals('y') ? 'color:green' : 'color:red'}">ye</p>
-    </div>
-</div>
-</div>
--->
-
-<div class="card mb-3" style="max-width: 540px;" >
+<div class="card mb-3" style="max-width: 540px; height: 20rem; margin: 0 auto; margin-top: 15%;" >
     <div class="row g-0">
         <div class="col-md-4">
-            <img th:src="@{${piatto.copertina}}" class="img-fluid rounded-start" style="width: 12rem; height: 8rem;">
+            <img th:src="@{${piatto.copertina}}" class="img-fluid rounded-start">
         </div>
         <div class="col-md-8">
             <div class="card-body" style="margin: 10px;">
