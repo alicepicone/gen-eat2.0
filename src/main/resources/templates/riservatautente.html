@@ -90,6 +90,14 @@
     </form>
 
     <p th:if="${send}">Ordine Inviato</p>
+
+    <hr>
+    <table>
+        <tr th:each="ordine : ${utente.ordini}">
+            <td th:text="${ordine.dataOraOrdine}"></td>
+            <td th:text="${ordine.importo} + '€'"></td>
+        </tr>
+    </table>
 </div>
 
 
