@@ -99,7 +99,7 @@
         <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row">
             <h2 style="margin-top: 2%;">Catalogo</h2>
              <div th:each="piatto : ${piatti}" class="col-md-3">
-                 <a th:href="@{/dettaglio(id=${piatto.id})}">
+                 <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">
                     <div class="card">
                         <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"
                                  th:alt="${piatto.nome}" style="height: 50%;">
@@ -118,7 +118,7 @@
         <div class="row">
             <!-- Implementare il titolo di ogni categoria-->
            <div th:each="piatto : ${piattiPerCategoria}" class="col-md-3">
-               <a th:href="@{/dettaglio(id=${piatto.id})}">
+               <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">
                     <div class="card">
                             <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"
                                  th:alt="${piatto.nome}" style="height: 50%;">
