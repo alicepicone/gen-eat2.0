@@ -17,7 +17,7 @@ text-align: center;
 background-color: antiquewhite;
 font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
-  font-weight: 900;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -33,7 +33,7 @@ text-align: center;
 background-color: coral;
 font-family: "Source Serif 4", serif;
 font-optical-sizing: auto;
-          font-weight: 900;
+          font-weight: 400;
           font-style: normal;
 }
 
@@ -107,7 +107,7 @@ width: 33%;
 background-color: coral;
 font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
-  font-weight: 900;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -162,7 +162,7 @@ background-color: greenyellow;
 background-color: aqua;
 font-family: "Source Serif 4", serif;
   font-optical-sizing: auto;
-  font-weight: 900;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -192,6 +192,6 @@ width: 60px;
     background-color: salmon;
     font-family: "Source Serif 4", serif;
       font-optical-sizing: auto;
-      font-weight: 900;
+      font-weight: 400;
       font-style: normal;
 }
