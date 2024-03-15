@@ -4,9 +4,21 @@ margin: 30px;
 height: 28rem;
 }
 
-main {
+.main-index {
 background-color: bisque;
 text-align: center;
+}
+
+.main-dettaglio {
+
+}
+
+.dettaglio-body{
+background-color: antiquewhite;
+}
+
+.footer-dettaglio {
+margin-top:30%;
 }
 
 h2 a {
@@ -101,9 +113,7 @@ border-radius: 25px;
 background-color:rgb(83, 96, 143);
 }
 
-.dettaglio-body{
-background-color: antiquewhite;
-}
+
 
 .dettaglio-header{
 background-color: darkgray;

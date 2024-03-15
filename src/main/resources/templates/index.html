@@ -92,7 +92,7 @@
             </button>
         </div>
     </header>
-    <main>
+    <main class="main-index">
         <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row">
             <h2 style="margin-top: 2%;">Catalogo</h2>
              <div th:each="piatto : ${piatti}" class="col-md-3">
