@@ -92,7 +92,7 @@
             <tr th:each="ordine : ${ordini}">
                 <td th:text="${#temporals.format(ordine.dataOraOrdine, 'dd-MM-yyyy HH:mm')}"></td>
                 <td th:text="${ordine.utente.nome} + ' ' + ${ordine.utente.cognome}"></td>
-                <td th:text="${ordine.dataOraRitiro}"></td>
+                <td th:text="${ordine.oraRitiro}"></td>
                 <td th:text="${#numbers.formatDecimal(ordine.importo, 1, 'POINT', 2, 'COMMA')} + '€'"></td>
             </tr>
             </tbody>

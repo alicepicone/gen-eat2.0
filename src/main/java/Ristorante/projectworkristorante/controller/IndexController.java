@@ -18,16 +18,6 @@ public class IndexController {
     @Autowired
     private PiattoService piattoService;
 
-//    @GetMapping
-//    public String getPage(Model model) {
-//
-//        List<Piatto> piatti = piattoService.getPiatti();
-//        model.addAttribute("piatti", piatti);
-//
-//
-//        return "index";
-//    }
-
     @GetMapping
     public String getPage(
             Model model,
@@ -41,18 +31,5 @@ public class IndexController {
 
         return "index";
     }
-
-    @GetMapping("/categoria")
-    public String filtroCategoria(@RequestParam(name = "categoria") String categoria, Model model) {
-
-        List<Piatto> piattiPerCategoria = piattoService.getPiattoByCategoria(categoria);
-        if (piattiPerCategoria == null || piattiPerCategoria.isEmpty()){
-            return "redirect:/";
-        }
-        model.addAttribute("piattiPerCategoria", piattiPerCategoria);
-        return "index";
-    }
-
-
 
 }

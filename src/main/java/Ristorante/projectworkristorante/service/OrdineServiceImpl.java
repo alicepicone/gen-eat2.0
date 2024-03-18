@@ -33,7 +33,7 @@ public class OrdineServiceImpl implements OrdineService{
             ordine.setUtente(utente);
             ordine.setPiatti(carrello);
             ordine.setImporto(piattoService.getTotaleCarrello(session));
-            ordine.setDataOraRitiro(LocalTime.parse(slot));
+            ordine.setOraRitiro(LocalTime.parse(slot));
             ordineDao.save(ordine);
             utente.getOrdini().add(ordine);
             session.setAttribute("utente", utente);

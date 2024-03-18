@@ -93,7 +93,6 @@
     </header>
     <main class="main-index">
         <div class="row justify-content-center" style="margin: auto;">
-<!--            <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row" style="margin: auto;">-->
             <h2 style="margin-top: 2%;" th:text="${cat == null ? 'Catalogo' : cat}"></h2>
              <div th:each="piatto : ${piatti}" class="col-md-3">
                  <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">
@@ -109,23 +108,6 @@
                  </a>
              </div>
         </div>
-
-
-<!--        <div class="row">-->
-        <!--           <div th:each="piatto : ${piattiPerCategoria}" class="col-md-3">-->
-<!--               <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">-->
-<!--                    <div class="card">-->
-<!--                            <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"-->
-<!--                                 th:alt="${piatto.nome}" style="height: 50%;">-->
-<!--                        <div class="card-body">-->
-<!--                            <h5 class="card-title" th:text="${piatto.nome}"></h5>-->
-<!--                            <p class="card-text" th:text="${piatto.descrizione}"></p>-->
-<!--                            <p th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA') + '€'}"></p>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--               </a>-->
-<!--           </div>-->
-<!--        </div>-->
     </main>
     <footer>
         <div class="about">

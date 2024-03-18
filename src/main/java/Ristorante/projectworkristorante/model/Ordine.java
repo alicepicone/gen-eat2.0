@@ -15,8 +15,8 @@ public class Ordine {
     private int id;
     @Column (name = "data_ora_ordine")
     private LocalDateTime dataOraOrdine;
-    @Column (name = "data_ora_ritiro") //TODO Rinominare in oraRitiro
-    private LocalTime dataOraRitiro;
+    @Column (name = "ora_ritiro")
+    private LocalTime oraRitiro;
     @Column
     private double importo;
     @ManyToOne(cascade = CascadeType.REFRESH)
@@ -47,12 +47,12 @@ public class Ordine {
         this.dataOraOrdine = dataOraOrdine;
     }
 
-    public LocalTime getDataOraRitiro() {
-        return dataOraRitiro;
+    public LocalTime getOraRitiro() {
+        return oraRitiro;
     }
 
-    public void setDataOraRitiro(LocalTime dataOraRitiro) {
-        this.dataOraRitiro = dataOraRitiro;
+    public void setOraRitiro(LocalTime dataOraRitiro) {
+        this.oraRitiro = oraRitiro;
     }
 
     public double getImporto() {
