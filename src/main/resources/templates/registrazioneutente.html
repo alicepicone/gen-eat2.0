@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
 </head>
 <body class="registrazione-utente">
@@ -44,38 +45,50 @@
 </header>
 <div class="container  text-center context col registrazione-utente-container">
     <h2 class="mb-3">Registrati</h2>
-    <form th:object="${utente}" method="post">
-        <label class="form-label col-form-label">Inserire il nome</label>
-        <input type="text" th:field="*{nome}" placeholder="nome" required>
-        <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
-        <br>
-        <label class="form-label col-form-label">Inserire il cognome</label>
-        <input type="text"  th:field="*{cognome}" placeholder="cognome" required>
-        <p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
-        <br>
-        <label class="form-label col-form-label">Scegliere l'username</label>
-        <input type="text" th:field="*{username}" placeholder="username" required>
-        <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
-        <p th:if="${duplicato}" th:text="${duplicato}"></p>
-        <br>
-        <label class="form-label col-form-label">Scegliere la password</label>
-        <input type="password" id="pwd" th:field="*{password}" placeholder="Password" required>
-        <button type="button" style="background-color:gray;" onclick="mostra()">M</button>
-        <div class="col-auto">
-            <span id="passwordHelpInline" class="form-text">
-              Deve contenere almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale.
-            </span>
+    <form class="row g-3" th:object="${utente}" method="post">
+        <div class="col-md-6">
+            <label class="form-label">Nome</label>
+            <input type="text" class="form-control" th:field="*{nome}" required>
+            <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
         </div>
-        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
-        <label class="form-label col-form-label">Inserire numero della carta (opzionale)</label>
-        <input type="text"  th:field="*{numeroCarta}" placeholder="numero di carta">
-        <p th:if="${#fields.hasErrors('numeroCarta')}" th:errors="*{numeroCarta}"></p>
-        <br>
-        <label class="form-label col-form-label">Inserire data di nascita (opzionale)</label>
-        <input type="date" th:field="*{dataDiNascita}" placeholder="scegli data di nascita">
-        <p th:if="${#fields.hasErrors('dataDiNascita')}" th:errors="*{dataDiNascita}"></p>
-        <br>
-        <input type="submit" class="mb-3" value="Registrati">
+        <div class="col-md-6">
+            <label class="form-label">Cognome</label>
+            <input type="text" class="form-control" th:field="*{cognome}" required>
+            <p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" th:field="*{username}" required>
+            <p th:if="${#fields.hasErrors('username')}" th:errors="*{username}"></p>
+            <p th:if="${duplicato}" th:text="${duplicato}"></p>
+        </div>
+        <div class="col-12">
+            <label class="form-label">Password</label>
+            <input type="password" id="password" th:field="*{password}" class="form-control" required>
+            <span class="password-toggle-icon" ><i class="fas fa-eye"></i></span>
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        </div>
+        <div style="margin: 0;" class="col-md-6">
+            <label class="form-label">N° Carta di credito</label>
+            <input type="text" th:field="*{numeroCarta}" class="form-control">
+            <p th:if="${#fields.hasErrors('numeroCarta')}" th:errors="*{numeroCarta}"></p>
+        </div>
+        <div style="margin: 0;" class="col-md-6">
+            <label class="form-label">Data di nascita</label>
+            <input type="date" th:field="*{dataDiNascita}" class="form-control">
+            <p th:if="${#fields.hasErrors('dataDiNascita')}" th:errors="*{dataDiNascita}"></p>
+        </div>
+        <div class="col-6">
+            <div class="form-check">
+                <input style="margin-left: 10%" class="form-check-input" type="checkbox" required>
+                <label class="form-check-label">
+                    Accetta i termini di servizio
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary button-83">Registrati</button>
+        </div>
     </form>
 </div>
 <footer>
@@ -110,17 +123,21 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async defer></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        var pwd = document.getElementById("pwd");
-        pwd.type = "password";
+
+    const passwordField = document.getElementById("password");
+    const togglePassword = document.querySelector(".password-toggle-icon i");
+
+    togglePassword.addEventListener("click", function () {
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        togglePassword.classList.remove("fa-eye");
+        togglePassword.classList.add("fa-eye-slash");
+      } else {
+        passwordField.type = "password";
+        togglePassword.classList.remove("fa-eye-slash");
+        togglePassword.classList.add("fa-eye");
+      }
     });
-    function mostra()
-    {
-        if(pwd.type == "password")
-            pwd.type = "text";
-        else
-            pwd.type = "password";
-    }
 </script>
 </body>
 </html>

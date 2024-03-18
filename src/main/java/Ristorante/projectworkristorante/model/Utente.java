@@ -25,7 +25,9 @@ public class Utente {
     private String username;
     @Column
     //espressione regolare di pattern
-    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,50}", message = "Password troppo debole")
+    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{6,50}",
+            message = "Password troppo debole - La password deve contenere almeno 6 caratteri tra cui una lettera maiuscola, " +
+                    "una lettera minuscola, un numero ed un carattere speciale")
     private String password;
     @Column (name = "numero_carta")
     private String numeroCarta;
