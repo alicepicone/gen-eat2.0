@@ -51,7 +51,7 @@ public class Ordine {
         return oraRitiro;
     }
 
-    public void setOraRitiro(LocalTime dataOraRitiro) {
+    public void setOraRitiro(LocalTime oraRitiro) {
         this.oraRitiro = oraRitiro;
     }
 
