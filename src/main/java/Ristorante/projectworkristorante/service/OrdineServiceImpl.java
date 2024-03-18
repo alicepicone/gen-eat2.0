@@ -8,10 +8,10 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class OrdineServiceImpl implements OrdineService{
@@ -44,5 +44,11 @@ public class OrdineServiceImpl implements OrdineService{
     @Override
     public List<Ordine> getOrdini() {
         return (List<Ordine>) ordineDao.findAll();
+    }
+
+    @SuppressWarnings("unchecked")
+    @Override
+    public Optional<Ordine> getOrdineByUtente(int idUtente) {
+        return ordineDao.findById(idUtente);
     }
 }

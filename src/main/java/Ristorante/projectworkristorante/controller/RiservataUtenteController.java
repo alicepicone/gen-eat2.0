@@ -1,6 +1,6 @@
 package Ristorante.projectworkristorante.controller;
 
-import Ristorante.projectworkristorante.model.Piatto;
+import Ristorante.projectworkristorante.model.Ordine;
 import Ristorante.projectworkristorante.model.Utente;
 import Ristorante.projectworkristorante.service.OrdineService;
 import Ristorante.projectworkristorante.service.PiattoService;
@@ -12,6 +12,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/riservatautente")
@@ -35,11 +39,13 @@ public class RiservataUtenteController {
             return  "redirect:/loginutente";
 
         Utente utente = (Utente) session.getAttribute("utente");
+        List<Ordine> ordini = ordineService.getOrdini();
+        if (!ordini.isEmpty())
+            model.addAttribute("ordini", ordini);
         model.addAttribute("utente", utente);
         model.addAttribute("carrello", piattoService.getCarrello(session));
         model.addAttribute("totale", piattoService.getTotaleCarrello(session));
         model.addAttribute("send", send);
-
         return "riservatautente";
 
     }

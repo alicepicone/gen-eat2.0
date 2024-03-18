@@ -46,7 +46,7 @@
 
 <div class="container"
      style="display:flex; text-align: center; justify-content: center; align-content: center; flex-direction: column;">
-    <h4 class="col-auto" th:text="${carrello == null} ? 'Non hai alcun prodotto nel carrello ' : 'Ecco il tuo carrello: '"></h4>
+    <h4 class="text-center" th:text="${carrello == null} ? 'Non hai alcun prodotto nel carrello ' : 'Ecco il tuo carrello: '"></h4>
     <div class="tabella">
         <table class="table">
             <thead class="table-dark">
@@ -91,13 +91,18 @@
 
     <p th:if="${send}">Ordine Inviato</p>
 
-    <hr>
-    <table>
-        <tr th:each="ordine : ${utente.ordini}">
-            <td th:text="${ordine.dataOraOrdine}"></td>
-            <td th:text="${ordine.importo} + '€'"></td>
-        </tr>
-    </table>
+    <div class="tabella" th:if="${ordini != null}">
+        <hr>
+        <table class="table">
+            <thead>
+            <tr class="left-bordo, right-bordo">I tuoi ordini sono:</tr>
+            </thead>
+            <tr th:each="ordine : ${utente.ordini}">
+                <td th:text="${ordine.dataOraOrdine}"></td>
+                <td th:text="${ordine.importo} + '€'"></td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 
