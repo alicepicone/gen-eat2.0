@@ -98,7 +98,7 @@
                  <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">
                     <div class="card">
                         <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"
-                                 th:alt="${piatto.nome}" style="height: 50%;">
+                                 th:alt="${piatto.nome}" style="width: 100%; height:70%;">
                         <div class="card-body">
                             <h5 class="card-title" th:text="${piatto.nome}"></h5>
                             <p class="card-text" th:text="${piatto.descrizione}"></p>
