@@ -18,12 +18,26 @@ public class IndexController {
     @Autowired
     private PiattoService piattoService;
 
+//    @GetMapping
+//    public String getPage(Model model) {
+//
+//        List<Piatto> piatti = piattoService.getPiatti();
+//        model.addAttribute("piatti", piatti);
+//
+//
+//        return "index";
+//    }
+
     @GetMapping
-    public String getPage(Model model) {
+    public String getPage(
+            Model model,
+            @RequestParam(name = "categoria", required = false) String categoria) {
 
-        List<Piatto> piatti = piattoService.getPiatti();
+        List<Piatto> piatti = categoria == null ? piattoService.getPiatti() : piattoService.getPiattoByCategoria(categoria);
         model.addAttribute("piatti", piatti);
-
+        if (categoria != null) {
+            model.addAttribute("cat", categoria);
+        }
 
         return "index";
     }

@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
 </head>
 <body class="body-index">
-    <header style="background-color: darkgray;">
+    <header style="background-color: cornsilk">
         <nav class="navbar navbar-expand-lg bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark">
             <div class="container-fluid">
                 <a class="navbar-brand" th:href="@{/}">Gen Eat</a>
@@ -33,12 +33,12 @@
                                 Categorie
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'antipasti'})}">Antipasti</a></li>
-                                <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'primi'})}">Primi</a></li>
-                                <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'secondi'})}">Secondi</a></li>
-                                <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'contorni'})}">Contorni</a></li>
-                                <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'dolci'})}">Dolci</a></li>
-                                <li><a class="dropdown-item" th:href="@{/categoria(categoria=${'bevande'})}">Bevande</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(categoria=${'Antipasti'})}">Antipasti</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(categoria=${'Primi'})}">Primi</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(categoria=${'secondi'})}">Secondi</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(categoria=${'contorni'})}">Contorni</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(categoria=${'dolci'})}">Dolci</a></li>
+                                <li><a class="dropdown-item" th:href="@{/(categoria=${'bevande'})}">Bevande</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -92,8 +92,9 @@
         </div>
     </header>
     <main class="main-index">
-        <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row">
-            <h2 style="margin-top: 2%;">Catalogo</h2>
+        <div class="row justify-content-center" style="margin: auto;">
+<!--            <div th:if="${piattiPerCategoria == null || piattiPerCategoria.isEmpty()}" class="row" style="margin: auto;">-->
+            <h2 style="margin-top: 2%;" th:text="${cat == null ? 'Catalogo' : cat}"></h2>
              <div th:each="piatto : ${piatti}" class="col-md-3">
                  <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">
                     <div class="card">
@@ -102,8 +103,7 @@
                         <div class="card-body">
                             <h5 class="card-title" th:text="${piatto.nome}"></h5>
                             <p class="card-text" th:text="${piatto.descrizione}"></p>
-                            <p style="background-color: rgb(27, 27, 214); border-radius: 5px; color: aliceblue; width: 20%; display: flex; align-items: center; justify-content: center;"
-                            th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')}"></p>
+                            <p th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA') + '€'}"></p>
                         </div>
                     </div>
                  </a>
@@ -111,22 +111,21 @@
         </div>
 
 
-        <div class="row">
-            <!-- Implementare il titolo di ogni categoria-->
-           <div th:each="piatto : ${piattiPerCategoria}" class="col-md-3">
-               <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">
-                    <div class="card">
-                            <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"
-                                 th:alt="${piatto.nome}" style="height: 50%;">
-                        <div class="card-body">
-                            <h5 class="card-title" th:text="${piatto.nome}"></h5>
-                            <p class="card-text" th:text="${piatto.descrizione}"></p>
-                            <p th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA') + '€'}"></p>
-                        </div>
-                    </div>
-               </a>
-           </div>
-        </div>
+<!--        <div class="row">-->
+        <!--           <div th:each="piatto : ${piattiPerCategoria}" class="col-md-3">-->
+<!--               <a th:href="@{/dettaglio(id=${piatto.id})}" style="text-decoration: none;">-->
+<!--                    <div class="card">-->
+<!--                            <img th:src="@{${piatto.copertina == null ? 'markerImage.png' : piatto.copertina}}" class="card-img-top"-->
+<!--                                 th:alt="${piatto.nome}" style="height: 50%;">-->
+<!--                        <div class="card-body">-->
+<!--                            <h5 class="card-title" th:text="${piatto.nome}"></h5>-->
+<!--                            <p class="card-text" th:text="${piatto.descrizione}"></p>-->
+<!--                            <p th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA') + '€'}"></p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--               </a>-->
+<!--           </div>-->
+<!--        </div>-->
     </main>
     <footer>
         <div class="about">
