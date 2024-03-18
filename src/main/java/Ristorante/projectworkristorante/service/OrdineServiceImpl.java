@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class OrdineServiceImpl implements OrdineService{
@@ -21,6 +20,7 @@ public class OrdineServiceImpl implements OrdineService{
     @Autowired
     private PiattoService piattoService;
 
+    @SuppressWarnings("unchecked")
     @Override
     public void inviaOrdine(HttpSession session, String slot) {
 
@@ -46,9 +46,8 @@ public class OrdineServiceImpl implements OrdineService{
         return (List<Ordine>) ordineDao.findAll();
     }
 
-    @SuppressWarnings("unchecked")
     @Override
-    public Optional<Ordine> getOrdineByUtente(int idUtente) {
-        return ordineDao.findById(idUtente);
+    public List<Ordine> getOrdiniByUtente(Utente utente) {
+        return ordineDao.findOrdiniByUtente(utente);
     }
 }
