@@ -54,7 +54,7 @@ color: yellow;
 }
 
 footer{
-background-color: black;
+background-color: rgb(43,48,53);
 color: aliceblue;
 display: flex;
 justify-content: space-evenly;
