@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/style1.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&display=swap" rel="stylesheet">
 </head>
 
@@ -64,7 +65,7 @@
         </div>
     </form>
 </div>
-<footer>
+<footer style="margin-top: 5%">
     <div class="about">
         <h2>About</h2>
         <p>Indirizzo: Via Roma 1, Milano, Italia</p>
@@ -93,20 +94,23 @@
         <p>Ivan Puglisi</p>
         <br>
     </div>
-</footer>
+</footer  >
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async defer></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        var pwd = document.getElementById("pwd");
-        pwd.type = "password";
+    const passwordField = document.getElementById("password");
+    const togglePassword = document.querySelector(".password-toggle-icon i");
+
+    togglePassword.addEventListener("click", function () {
+      if (passwordField.type === "password") {
+        passwordField.type = "text";
+        togglePassword.classList.remove("fa-eye");
+        togglePassword.classList.add("fa-eye-slash");
+      } else {
+        passwordField.type = "password";
+        togglePassword.classList.remove("fa-eye-slash");
+        togglePassword.classList.add("fa-eye");
+      }
     });
-    function mostra()
-    {
-        if(pwd.type == "password")
-            pwd.type = "text";
-        else
-            pwd.type = "password";
-    }
 </script>
 </body>
 </html>
