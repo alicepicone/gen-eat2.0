@@ -41,16 +41,6 @@ font-optical-sizing: auto;
 background-color: darkgray;
 }
 
-.login-admin-container{
-margin: 0 auto;
-margin-top: 20%;
-margin-bottom: 20%;
-border: 3px;
-border-style: none;
-border-radius: 25px;
-background-color:green;
-}
-
 .passw-btn{
 background-color:black;
 color: yellow;
