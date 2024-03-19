@@ -9,6 +9,11 @@ background-color: bisque;
 text-align: center;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+background-color: #212529;
+border-radius: 20%;
+}
+
 .main-dettaglio {
 
 }
