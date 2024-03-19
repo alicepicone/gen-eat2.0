@@ -308,7 +308,7 @@
    font: inherit;
    width: 120px;
    padding: 1%;
-   background: cyan;
+   background: rgb(249 219 145);
    color: black;
    border-radius: 2em;
    box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
@@ -319,7 +319,7 @@
    option {
       text-align:start ;
       color: inherit;
-      background-color: rgb(109, 188, 240);
+      background-color: rgb(255 211 174);
    }
 
    /* button registrati */
