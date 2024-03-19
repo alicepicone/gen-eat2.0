@@ -46,6 +46,7 @@
 .tabella{
     width: 70%; 
     margin: 2% auto;
+    padding-bottom: 1.5%;
 }
 
 a{
@@ -112,4 +113,16 @@ a{
           font-optical-sizing: auto;
           font-weight: 400;
           font-style: normal;
+}
+
+.container-form-piatto {
+    background-color: #b1c3dc;
+        margin: 0 auto;
+        width: 40%;
+        margin-top: 5%;
+        padding-bottom: 2%;
+        padding-top: 2%;
+        border-radius: 10px;
+        text-shadow: 50px 50px 100px black;
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 }

@@ -29,19 +29,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" th:href="@{/}">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            Login
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" th:href="@{/loginutente}">Utente</a></li>
-                            <li><a class="dropdown-item" th:href="@{/loginadmin}">Admin</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" th:href="@{/registrazioneutente}">Registrati</a>
-                    </li>
                 </ul>
                 <ul class="navbar-nav me-2 mb-2 mb-lg-0">
                     <li class="nav-item">
@@ -101,45 +88,49 @@
     </table>
 </div>
 <hr>
-<form action="/adminpiatti" method="post" enctype="multipart/form-data" class="form-field-piatto">
-    <h2>Registazione piatto</h2>
-    <br>
-    <div class="row g-3 align-items-center" style="justify-content: center;">
-        <div class="col-auto" style="margin: 10%;">
-            <label class="form-label">Nome piatto</label>
-            <input type="text" name="nome" class="form-control" th:value="${piatto.nome}" required>
-            <p th:if="${errori != null && errori.containsKey('nome')}" th:text="${errori.get('nome')}"></p>
+<div class="container-form-piatto">
+    <form action="/adminpiatti" method="post" enctype="multipart/form-data" class="form-field-piatto">
+        <h2>Registazione piatto</h2>
+        <br>
+        <div class="row g-3 align-items-center" style="justify-content: center;">
+            <div class="col-auto" style="margin: 10%;">
+                <label class="form-label">Nome piatto</label>
+                <input type="text" name="nome" class="form-control" th:value="${piatto.nome}" required>
+                <p th:if="${errori != null && errori.containsKey('nome')}" th:text="${errori.get('nome')}"></p>
+            </div>
         </div>
-    </div>
-    <div class="row g-3 align-items-center" style="justify-content: center;">
-        <div class="col-auto" style="margin: 10%;">
-            <label class="form-label">Prezzo</label>
-            <input type="number" name="prezzo" step="any" class="form-control" th:value="${piatto.prezzo}" required>
-            <p th:if="${errori != null && errori.containsKey('prezzo')}" th:text="${errori.get('prezzo')}"></p>
+        <div class="row g-3 align-items-center" style="justify-content: center;">
+            <div class="col-auto" style="margin: 10%;">
+                <label class="form-label">Prezzo</label>
+                <input type="number" name="prezzo" step="any" class="form-control" th:value="${piatto.prezzo}" required>
+                <p th:if="${errori != null && errori.containsKey('prezzo')}" th:text="${errori.get('prezzo')}"></p>
+            </div>
         </div>
-    </div>
-    <div class="row g-3 align-items-center" style="justify-content: center;">
-        <div class="col-auto" style="margin: 10%;">
-            <label class="form-label">Descrizione</label>
-            <input type="text" name="descrizione" th:value="${piatto.descrizione}" class="form-control" required>
-            <p th:if="${errori != null && errori.containsKey('descrizione')}" th:text="${errori.get('descrizione')}"></p>
+        <div class="row g-3 align-items-center" style="justify-content: center;">
+            <div class="col-auto" style="margin: 10%;">
+                <label class="form-label">Descrizione</label>
+                <input type="text" name="descrizione" th:value="${piatto.descrizione}" class="form-control" required>
+                <p th:if="${errori != null && errori.containsKey('descrizione')}" th:text="${errori.get('descrizione')}"></p>
+            </div>
         </div>
-    </div>
-    <div class="row g-3 align-items-center" style="justify-content: center;">
-        <div class="col-auto" style="margin: 10%;">
-            <label class="form-label">Categoria</label>
-            <input type="text" name="categoria" th:value="${piatto.categoria}" class="form-control" required>
-            <p th:if="${errori != null && errori.containsKey('categoria')}" th:text="${errori.get('categoria')}"></p>
+        <div class="row g-3 align-items-center" style="justify-content: center;">
+            <div class="col-auto" style="margin: 10%;">
+                <label class="form-label">Categoria</label>
+                <input type="text" name="categoria" th:value="${piatto.categoria}" class="form-control" required>
+                <p th:if="${errori != null && errori.containsKey('categoria')}" th:text="${errori.get('categoria')}"></p>
+            </div>
         </div>
-    </div>
-    <div class="mb-3">
-        <label for="formFile" class="form-label">Immagine</label>
-        <input class="form-control" name="copertina" type="file" id="formFile">
-    </div>
-    <div class="col-auto">
-        <button class="button-55" type="submit">Conferma</button>
-    </div>
-</form>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Immagine</label>
+            <input class="form-control" name="copertina" type="file" id="formFile">
+        </div>
+        <div class="col-auto" style="padding-top: 4%;
+    padding-bottom: 3%;">
+            <button class="button-55" type="submit">Conferma</button>
+        </div>
+    </form>
+</div>
+
 <footer class="footer-admin-piatti">
     <div class="about">
         <h2>About</h2>
