@@ -60,7 +60,7 @@
 </header>
 
 <main class="main-dettaglio">
-    <div class="card mb-3" style="max-width: 540px; height: 20rem; margin: 0 auto; margin-top: 15%;" >
+    <div class="card shadow-lg mb-3" style="max-width: 800px; height: 350px; margin: 0 auto; margin-top: 15%;" >
         <div class="row g-0">
             <div class="col-md-4">
                 <img th:src="@{${piatto.copertina}}" class="img-fluid rounded-start">
@@ -72,10 +72,13 @@
                     <p th:text="'Categoria: '+${piatto.categoria}">
                         <small class="text-muted"></small></p>
                     <h3 th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'"></h3>
+                    <br>
                     <a class="btn btn-a"
                        th:href="@{/dettaglio/aggiungi(id=${piatto.id})}">
                         Aggiungi al carrello
                     </a>
+                    <br>
+                    <br>
                     <p th:if="${result != null}"
                        th:text="${result.equals('y') ? 'Piatto Aggiunto' : 'Piatto già presente'}"
                        th:style="${result.equals('y') ? 'color:green' : 'color:red'}">ye</p>
