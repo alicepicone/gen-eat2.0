@@ -27,7 +27,8 @@
     display: flex;
     justify-content: center;
     margin-bottom: 2%;
-    padding-top: 2%
+    padding-top: 2%;
+    align-items: baseline;
 }
 .cont{
     display: flex;
@@ -100,6 +101,14 @@ a{
 
 .body-admin-utenti{
     font-family: "Monserrat", serif;
+          font-optical-sizing: auto;
+          font-weight: 400;
+          font-style: normal;
+}
+
+.body-admin-riservata{
+    background-color: rgba(20, 117, 92, 0.432);
+        font-family: font-family: "Monserrat", serif;
           font-optical-sizing: auto;
           font-weight: 400;
           font-style: normal;
