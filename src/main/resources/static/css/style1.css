@@ -15,7 +15,7 @@ text-align: center;
 
 .dettaglio-body{
 background-color: antiquewhite;
-font-family: "Source Serif 4", serif;
+font-family: "Monserrat", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -31,7 +31,7 @@ text-align: center;
 
 .body-admin-login{
 background-color: coral;
-font-family: "Source Serif 4", serif;
+font-family: "Monserrat", serif;
 font-optical-sizing: auto;
           font-weight: 400;
           font-style: normal;
@@ -113,7 +113,7 @@ width: 33%;
 
 .user-login{
 background-color: coral;
-font-family: "Source Serif 4", serif;
+font-family: "Monserrat", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -168,7 +168,7 @@ background-color: greenyellow;
 
 .registrazione-utente{
 background-color: bisque;
-font-family: "Source Serif 4", serif;
+font-family: "Monserrat", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
@@ -202,7 +202,7 @@ width: 60px;
 
 .body-riservata-utente{
     background-color: rgba(255, 255, 135, 0.892);
-    font-family: "Source Serif 4", serif;
+    font-family: "Monserrat", serif;
       font-optical-sizing: auto;
       font-weight: 400;
       font-style: normal;
