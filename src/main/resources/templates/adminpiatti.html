@@ -49,44 +49,6 @@
       transform: translateX(-2750%) rotate(135deg);"></div></a>
     <h1>Gestione piatti</h1>
 </div>
-<div class="tabella">
-    <table class="table">
-        <thead class="table-dark">
-        <td class="left-bordo">Immagine</td>
-        <td>Nome</td>
-        <td>Prezzo</td>
-        <td>Descrizione</td>
-        <td>Categoria</td>
-        <td></td>
-        <td class="right-bordo"></td>
-        </thead>
-        <tbody class="body-tabella">
-        <tr th:each="piatto : ${piatti}">
-            <td>
-                <img th:src="@{${piatto.copertina}}" class="copertina">
-            </td>
-            <td th:text="${piatto.nome}"></td>
-            <td th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'"></td>
-            <td th:text="${piatto.descrizione}"></td>
-            <td th:text="${piatto.categoria}"></td>
-            <td><a th:href="@{/adminpiatti(id=${piatto.id})}"><button class="button-82-pushable-mod">
-                <span class="button-82-shadow-mod"></span>
-                <span class="button-82-edge-mod"></span>
-                <span class="button-82-front-mod">
-                          Modifica
-                        </span>
-            </button></a></td>
-            <td><a th:href="@{/adminpiatti/elimina(id=${piatto.id})}"><button class="button-82-pushable">
-                <span class="button-82-shadow"></span>
-                <span class="button-82-edge"></span>
-                <span class="button-82-front">
-                          Elimina
-                        </span>
-            </button></a></td>
-        </tr>
-        </tbody>
-    </table>
-</div>
 <div class="container-form-piatto">
     <form action="/adminpiatti" method="post" enctype="multipart/form-data" class="form-field-piatto">
         <h2>Registazione piatto</h2>
@@ -129,8 +91,46 @@
         </div>
     </form>
 </div>
+<div class="tabella">
+    <table class="table">
+        <thead class="table-dark">
+        <td class="left-bordo">Immagine</td>
+        <td>Nome</td>
+        <td>Prezzo</td>
+        <td>Descrizione</td>
+        <td>Categoria</td>
+        <td></td>
+        <td class="right-bordo"></td>
+        </thead>
+        <tbody class="body-tabella">
+        <tr th:each="piatto : ${piatti}">
+            <td>
+                <img th:src="@{${piatto.copertina}}" class="copertina">
+            </td>
+            <td th:text="${piatto.nome}"></td>
+            <td th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'"></td>
+            <td th:text="${piatto.descrizione}"></td>
+            <td th:text="${piatto.categoria}"></td>
+            <td><a th:href="@{/adminpiatti(id=${piatto.id})}"><button class="button-82-pushable-mod">
+                <span class="button-82-shadow-mod"></span>
+                <span class="button-82-edge-mod"></span>
+                <span class="button-82-front-mod">
+                          Modifica
+                        </span>
+            </button></a></td>
+            <td><a th:href="@{/adminpiatti/elimina(id=${piatto.id})}"><button class="button-82-pushable">
+                <span class="button-82-shadow"></span>
+                <span class="button-82-edge"></span>
+                <span class="button-82-front">
+                          Elimina
+                        </span>
+            </button></a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
-<footer class="footer-admin-piatti">
+<footer>
     <div class="about">
         <h2>About</h2>
         <p>Indirizzo: Via Roma 1, Milano, Italia</p>
