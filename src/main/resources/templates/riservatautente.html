@@ -71,19 +71,19 @@
     </div>
 
     <h6 th:if="${carrello != null}"
-        th:text="'Totale carrello ' + ${#numbers.formatDecimal(totale, 1, 'POINT', 2, 'COMMA')}+ '€'"></h6>
+        th:text="'Totale carrello ' + ${#numbers.formatDecimal(totale, 1, 'POINT', 2, 'COMMA')}+ '€'" style="margin-bottom: 2%"></h6>
 
     <form action="/riservatautente/invia" method="post" th:if="${carrello != null}">
-        <lable>Seleziona una data di ritiro</lable>
+        <lable>Seleziona l'ora di ritiro</lable>
         <br>
 
-        <select name="slot" class="selettore">
-            <option value="19:30">Ore 19:30</option>
-            <option value="20:00">Ore 20:00</option>
-            <option value="20:30">Ore 20:30</option>
-            <option value="21:00">Ore 21:00</option>
-            <option value="21:30">Ore 21:30</option>
-            <option value="22:00">Ore 22:00</option>
+        <select name="slot" class="selettore" style="margin-top: 1%">
+            <option value="19:30">19:30</option>
+            <option value="20:00">20:00</option>
+            <option value="20:30">20:30</option>
+            <option value="21:00">21:00</option>
+            <option value="21:30">21:30</option>
+            <option value="22:00">22:00</option>
         </select>
         <br>
         <input style="margin-top:1%" type="submit" class="button-20" role="button" value="Invia ordine">
