@@ -5,9 +5,9 @@ dove sarà possibile ordinare e acquistare pietanze e bevande da pagare e ritira
 
 Le funzionalità sono:
 
--un catalogo con filtro per categorie, 
--una sezione utente dove registrarsi e fare login per poter inviare ordini con la possibilità di selezionare un orario di ritiro,
--una sezione admin con 2 schermate, una per gestire utenti e ordini e un'altra per aggiungere, modificare o rimuovere piatti.
+- un catalogo con filtro per categorie, 
+- una sezione utente dove registrarsi e fare login per poter inviare ordini con la possibilità di selezionare un orario di ritiro,
+- una sezione admin con 2 schermate, una per gestire utenti e ordini e un'altra per aggiungere, modificare o rimuovere piatti.
 
 Tutto il sito si aggancia ad un database per garantire la persistenza dei dati.
 
