@@ -1,5 +1,6 @@
 package Ristorante.projectworkristorante.controller;
 
+import Ristorante.projectworkristorante.model.Utente;
 import Ristorante.projectworkristorante.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,10 @@ public class LoginUtenteController {
 
         if(!utenteService.controlloLogin(username, password, session))
             return "redirect:/loginutente?errore";
+
+        if(session.getAttribute("admin") != null) {
+            return "redirect:/riservataadmin";
+        }
 
         return "redirect:/riservatautente";
     }

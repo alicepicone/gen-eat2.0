@@ -19,11 +19,15 @@ public class UtenteServiceImpl implements UtenteService{
 
         Utente utente = utenteDao.findByUsernameAndPassword(username, password);
 
-        if(utente != null) {
-            session.setAttribute("utente", utente);
+        if(utente == null) {
+            return false;
+        }
+        if(utente.isAdmin()) {
+            session.setAttribute("admin", utente);
             return true;
         }
-        return false;
+        session.setAttribute("utente", utente);
+        return true;
     }
 
     @Override
