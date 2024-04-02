@@ -107,6 +107,26 @@
             </tr>
         </table>
     </div>
+
+    <h2>I tuoi dati</h2>
+    <form th:object="${utente}" method="post">
+        <input type="hidden" th:field="*{id}">
+        <input type="text" th:field="*{nome}" placeholder="inserire nome" required>
+        <p th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></p>
+        <br>
+        <input type="text" th:field="*{cognome}" placeholder="inserire cognome" required>
+        <p th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}"></p>
+        <br>
+        <input type="text" th:field="*{username}" readonly>
+        <br>
+        <input type="text" th:field="*{password}" placeholder="scegli password" required
+               id="pwd">
+        <button type="button" onclick="mostra()">Mostra/Nascondi</button>
+        <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        <br>
+        <input type="submit" value="Modifica Dati">
+    </form>
+
 </div>
 
 
@@ -133,10 +153,22 @@
         <p>Bartolomeo Cenisio</p>
         <p>Thomas Ferru</p>
         <p>Andrea De Benedetto</p>
-        <p>Ivan Puglisi</p>
         <br>
     </div>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        var pwd = document.getElementById("pwd");
+        pwd.type = "password";
+    });
+
+    function mostra() {
+        if(pwd.type == "password")
+            pwd.type = "text";
+        else
+            pwd.type = "password";
+    }
+</script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" async defer></script>
 </body>
 
