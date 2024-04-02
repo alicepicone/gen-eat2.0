@@ -2,7 +2,6 @@ package Ristorante.projectworkristorante.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
-
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,6 +32,8 @@ public class Utente {
     private String numeroCarta;
     @Column (name = "data_di_nascita")
     private LocalDate dataDiNascita;
+    @Column (name = "is_admin")
+    private boolean isAdmin = false;
 
     @OneToMany
             (
@@ -97,6 +98,14 @@ public class Utente {
 
     public void setDataDiNascita(LocalDate dataDiNascita) {
         this.dataDiNascita = dataDiNascita;
+    }
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
     }
 
     public List<Ordine> getOrdini() {

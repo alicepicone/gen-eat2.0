@@ -1,6 +1,6 @@
 package Ristorante.projectworkristorante.controller;
 
-import Ristorante.projectworkristorante.service.AdminService;
+import Ristorante.projectworkristorante.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class LoginAdminController {
 
     @Autowired
-    private AdminService adminService;
+    private UtenteService utenteService;
 
     @GetMapping
     public String getPage(HttpSession session,
@@ -35,7 +35,7 @@ public class LoginAdminController {
             @RequestParam("password") String password,
             HttpSession session) {
 
-        if(!adminService.adminLogin(username, password, session))
+        if(!utenteService.adminLogin(username, password, session))
             return "redirect:/loginadmin?errore";
 
         return "redirect:/riservataadmin";

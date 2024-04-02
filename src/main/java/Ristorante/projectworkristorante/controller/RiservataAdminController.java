@@ -1,6 +1,6 @@
 package Ristorante.projectworkristorante.controller;
 
-import Ristorante.projectworkristorante.model.Admin;
+import Ristorante.projectworkristorante.model.Utente;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ public class RiservataAdminController {
         if(session.getAttribute("admin") == null)
             return  "redirect:/loginadmin";
 
-        Admin admin = (Admin) session.getAttribute("admin");
+        Utente admin = (Utente) session.getAttribute("admin");
         model.addAttribute("user", admin);
 
         return "riservataadmin";
