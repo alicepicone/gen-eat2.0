@@ -56,7 +56,7 @@
             <tbody class="body-tabella">
             <tr th:each="piatto : ${carrello}">
                 <td style="background-color: bisque;" th:text="${piatto.nome}">Nome</td>
-                <td style="background-color: bisque;" th:text="${piatto.prezzo} + '€'">Prezzo</td>
+                <td style="background-color: bisque;" th:text="${#numbers.formatDecimal(piatto.prezzo, 1, 'POINT', 2, 'COMMA')} + '€'">Prezzo</td>
                 <td style="background-color: bisque;"><a th:href="@{/riservatautente/rimuovi(id=${piatto.id})}"><button class="button-82-pushable">
                     <span class="button-82-shadow"></span>
                     <span class="button-82-edge"></span>
