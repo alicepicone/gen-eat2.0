@@ -31,7 +31,7 @@ public class UtenteServiceImpl implements UtenteService{
     }
 
     @Override
-    public void registraUtente(Utente utente) {
+    public void salvaDatiUtente(Utente utente) {
         utenteDao.save(utente);
     }
 

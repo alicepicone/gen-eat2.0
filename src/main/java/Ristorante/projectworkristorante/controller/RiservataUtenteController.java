@@ -33,10 +33,12 @@ public class RiservataUtenteController {
                           Model model,
                           @RequestParam(name = "send", required = false) String send) {
 
-        if(session.getAttribute("utente") == null)
-            return  "redirect:/loginutente";
+        if(session.getAttribute("utente") == null) {
+            return "redirect:/loginutente";
+        }
 
         Utente utente = (Utente) session.getAttribute("utente");
+
         List<Ordine> ordini = ordineService.getOrdiniByUtente(utente);
         if (!ordini.isEmpty()) {
             model.addAttribute("ordini", ordini);
@@ -75,7 +77,7 @@ public class RiservataUtenteController {
         if(result.hasErrors())
             return "riservatautente";
 
-        utenteService.registraUtente(utente);
+        utenteService.salvaDatiUtente(utente);
         session.setAttribute("utente", utente);
 
         return "redirect:/riservatautente";
@@ -89,6 +91,5 @@ public class RiservataUtenteController {
 
         return "redirect:/riservatautente?send";
     }
-
 
 }

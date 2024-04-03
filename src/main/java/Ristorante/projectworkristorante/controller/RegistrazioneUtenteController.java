@@ -40,7 +40,7 @@ public class RegistrazioneUtenteController {
             model.addAttribute("duplicato", "Username non disponibile");
             return "registrazioneutente";
         }
-        utenteService.registraUtente(utente);
+        utenteService.salvaDatiUtente(utente);
         return "redirect:/loginutente";
     }
 }
