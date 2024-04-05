@@ -100,7 +100,7 @@
                 <td style="background-color:black; color: white">Importo</td>
                 </tr>
             </thead>
-            <tr th:each="ordine : ${utente.ordini}">
+            <tr th:each="ordine : ${ordini}">
                 <td style="background-color: bisque" th:text="${#temporals.format(ordine.dataOraOrdine, 'dd-MM-yyyy HH:mm')}"></td>
                 <td style="background-color: bisque" th:text="${#numbers.formatDecimal(ordine.importo, 1, 'POINT', 2, 'COMMA') + '€'}"></td>
             </tr>
