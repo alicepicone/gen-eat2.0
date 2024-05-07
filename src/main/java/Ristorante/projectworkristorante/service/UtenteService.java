@@ -10,5 +10,4 @@ public interface UtenteService {
     void salvaDatiUtente(Utente utente);
     boolean controlloUsername(String username);
     List<Utente> getUtenti();
-    public boolean adminLogin(String username, String password, HttpSession session);
 }

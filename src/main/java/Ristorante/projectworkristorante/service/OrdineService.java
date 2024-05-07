@@ -5,7 +5,6 @@ import Ristorante.projectworkristorante.model.Utente;
 import jakarta.servlet.http.HttpSession;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface OrdineService {
 

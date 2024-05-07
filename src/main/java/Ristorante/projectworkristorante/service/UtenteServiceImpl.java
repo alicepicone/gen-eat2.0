@@ -51,17 +51,4 @@ public class UtenteServiceImpl implements UtenteService{
 
         return utenti;
     }
-
-    @Override
-    public boolean adminLogin(String username, String password, HttpSession session) {
-
-        Utente admin = utenteDao.findByUsernameAndPassword(username, password);
-
-        if(admin == null || !admin.isAdmin()) {
-            return false;
-        }
-        session.setAttribute("admin", admin);
-
-        return true;
-    }
 }

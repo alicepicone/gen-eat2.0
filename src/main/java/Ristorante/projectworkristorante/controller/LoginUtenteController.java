@@ -1,6 +1,5 @@
 package Ristorante.projectworkristorante.controller;
 
-import Ristorante.projectworkristorante.model.Utente;
 import Ristorante.projectworkristorante.service.UtenteService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
